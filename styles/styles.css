@@ -12,28 +12,39 @@
 
  :root {
   /* colors */
-  --link-color: #035fe6;
-  --link-hover-color: #136ff6;
+  --emerald: #0F7272;
+  --copper: #826338;
+  --skyblue: #8AD3EC;
+  --darkgray: #292D29;
+  --orange: #DE6502;
+  --green: #1A6832;
+  --blue: #306079;
+  --light-blue: #E2F7FE;
+
+  /* colors */
+  --link-color: #0F7272;
+  --link-hover-color: #0F7272;
   --background-color: #fff;
   --overlay-background-color: #eee;
   --highlight-background-color: #ccc;
   --text-color: #000;
 
   /* fonts */
-  --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
-  --heading-font-family: var(--body-font-family);
+  --body-font-family: nobel, sans-serif;
+  --heading-font-family-h1: aviano-royale, serif;
+  --heading-font-family: aviano, serif;
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 18px;
-  --body-font-size-xs: 14px;
+  --body-font-size-m: 16px;
+  --body-font-size-s: 14px;
+  --body-font-size-xs: 12px;
 
   /* heading sizes */
-  --heading-font-size-xxl: 48px;
-  --heading-font-size-xl: 40px;
-  --heading-font-size-l: 32px;
-  --heading-font-size-m: 24px;
+  --heading-font-size-xxl: 40px;
+  --heading-font-size-xl: 30px;
+  --heading-font-size-l: 25px;
+  --heading-font-size-m: 22px;
   --heading-font-size-s: 20px;
   --heading-font-size-xs: 18px;
 
@@ -50,6 +61,7 @@ body {
   color: var(--text-color);
   background-color: var(--background-color);
   display: none;
+  font-weight: 300;
 }
 
 body.appear {
@@ -62,6 +74,7 @@ header {
 
 h1, h2, h3,
 h4, h5, h6 {
+  color: var(--copper);
   font-family: var(--heading-font-family);
   font-weight: 600;
   line-height: 1.25;
@@ -70,7 +83,11 @@ h4, h5, h6 {
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl) }
+h1 { 
+  font-size: var(--heading-font-size-xxl);
+  font-family: var(--heading-font-family-h1);
+}
+
 h2 { font-size: var(--heading-font-size-xl) }
 h3 { font-size: var(--heading-font-size-l) }
 h4 { font-size: var(--heading-font-size-m) }
@@ -119,12 +136,13 @@ a.button:any-link, button {
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
-  background-color: var(--link-color);
+  background-color: var(--emerald);
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
@@ -198,10 +216,14 @@ hr {
   border-bottom: 1px solid var(--overlay-background-color);
 }
 
-main img {
+img {
   max-width: 100%;
   width: auto;
   height: auto;
+}
+
+.default-content-wrapper {
+  text-align: center;
 }
 
 @media (min-width: 600px) {
@@ -212,12 +234,16 @@ main img {
 
 @media (min-width: 900px) {
   :root {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 36px;
-    --heading-font-size-m: 30px;
+    --heading-font-size-xxl: 65px;
+    --heading-font-size-xl: 40px;
+    --heading-font-size-l: 30px;
+    --heading-font-size-m: 25px;
     --heading-font-size-s: 24px;
     --heading-font-size-xs: 22px;  
+
+    /* body sizes */
+    --body-font-size-m: 18px;
+
   }
   
   .section > div {
@@ -232,6 +258,17 @@ main .section[data-section-status='initialized'] {
   display: none;
 }
 
-main .section.highlight {
-  background-color: var(--highlight-background-color);
+main .section.dark {
+  background-color: var(--emerald);
+  color: white;
+}
+
+main .section.dark h2 {
+  color: white;
+}
+
+main .section.dark a.button:any-link, main .section.dark button {
+    color: var(--emerald);
+    background-color: var(--background-color);
+
 }
