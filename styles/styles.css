@@ -53,6 +53,28 @@
 
 }
 
+/* fallback font for aviano (700) */
+@font-face {
+  font-family: "aviano-700-fallback";
+  size-adjust: 106.081%;
+  src: local("Times New Roman");
+}
+
+/* fallback font for aviano-royale (700) */
+@font-face {
+  font-family: "aviano-royale-700-fallback";
+  size-adjust: 137.831%;
+  src: local("Times New Roman");
+}
+
+/* fallback font for nobel (300) */
+@font-face {
+  font-family: "nobel-300-fallback";
+  size-adjust: 82.589%;
+  src: local("Arial");
+}
+
+
 body {
   font-size: var(--body-font-size-m);
   margin: 0;
