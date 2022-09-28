@@ -697,3 +697,23 @@ function loadDelayed() {
   window.setTimeout(() => import('./delayed.js'), 3000);
   // load anything that can be postponed to the latest here
 }
+
+export async function lookupPages(config) {
+  /* load index */
+  if (!window.pageIndex) {
+    const resp = await fetch('/query-index.json');
+    const json = await resp.json();
+    const lookup = {};
+    json.data.forEach((row) => {
+      lookup[row.path] = row;
+    });
+    window.pageIndex = { data: json.data, lookup };
+  }
+
+  /* simple array lookup */
+  if (Array.isArray(config)) {
+    const pathnames = config;
+    return (pathnames.map((path) => window.pageIndex.lookup[path]).filter((e) => e));
+  }
+  return [];
+}
