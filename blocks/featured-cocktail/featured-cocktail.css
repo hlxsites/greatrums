@@ -1,0 +1,27 @@
+.featured-cocktail > div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.featured-cocktail img {
+    width: 100%;
+}
+
+
+@media (min-width: 900px) {
+    .featured-cocktail > div {
+        display: flex;
+        align-items: center;
+        flex-direction: unset;
+    }
+
+    .featured-cocktail > div > div {
+        flex: 1;
+        margin-left: 32px;
+    }
+
+    .featured-cocktail > div > div:first-of-type {
+        margin-left: unset;
+    }
+}
