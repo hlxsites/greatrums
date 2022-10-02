@@ -1,0 +1,77 @@
+main .featured-flavors-container {
+    padding:0px;
+    margin:auto;
+}
+
+main .hero {
+    align-items: unset;
+    padding-top: 0;
+}
+
+main .hero h1 {
+    width: 500px;
+    margin-top: .8em;
+    font-size: 75px;
+    font-weight: 650;
+    letter-spacing: 3.5px;
+    line-height: 1;
+}
+
+main .featured-flavors-container div {
+    max-width: 1500px;
+}
+main .featured-flavors {
+    display: flex;
+    font-size: var(--body-font-size-m);
+    text-align: center;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 1500px;
+    margin: auto;
+    
+}
+
+main .featured-flavors div {
+    background-color: #f5f3ee;
+    max-width: 459px;
+    height: 332px;
+    
+    margin:auto;
+    margin-bottom:20px;
+    flex: 1 0 459px;
+    
+    
+}
+
+main .featured-flavors div a {
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    font-size: smaller;
+}
+
+main .featured-flavors div > h4 {
+    color: black;
+    padding-top:100px;
+}
+
+@media(max-width:1500px) {
+    main .featured-flavors {
+        
+        min-width: auto;
+        display: block;
+        
+    }
+
+    main .featured-flavors-wrapper {
+        
+    }
+
+    main .featured-flavors div {
+        
+       min-width:100%;
+        
+    }
+    
+}
