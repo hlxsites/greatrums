@@ -48,3 +48,29 @@
         margin-left: unset;
     }
 }
+
+.featured-rum.card {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 16px;
+}
+
+.featured-rum.card > div {
+    flex-direction: column;
+}
+
+.featured-rum.card div div > * {
+    display: none;
+}
+
+.featured-rum.card div div > picture:nth-of-type(2) {
+    display: block;
+}
+
+.featured-rum.card div div > h3 {
+    text-align: center;
+    display: block;
+}
