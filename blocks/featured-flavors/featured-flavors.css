@@ -1,0 +1,176 @@
+main .featured-flavors-container {
+    padding: 0;
+    margin: auto;
+}
+
+main .hero {
+    align-items: unset;
+    padding-top: 0;
+}
+
+main .hero h1 {
+    width: 500px;
+    margin-top: .8em;
+    font-size: 75px;
+    font-weight: 650;
+    letter-spacing: 3.5px;
+    line-height: 1;
+
+}
+
+main .featured-flavors-container div {
+    max-width: 1500px;
+
+}
+
+main .featured-flavors {
+    display: flex;
+    font-size: var(--body-font-size-m);
+    text-align: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+    flex-wrap:wrap;
+}
+
+main .featured-flavor-card {
+    background-color: #f5f3ee;
+    min-width: 459px;
+    height: 336px;
+    flex: 0 1 459px;
+    
+}
+
+main .featured-flavor-card:first-child {
+    margin-right: 32px;
+}
+
+main .featured-flavor-card:nth-child(2) {
+    margin-right: 32px;
+}
+
+main .featured-flavor-card div>a {
+    text-transform: uppercase;
+    color: black;
+    font-weight: 500;
+    position: absolute;
+    bottom: 0;
+    font-size: smaller;
+    width: 100%;
+    left: 0;
+}
+
+main .featured-flavor-card div>p {
+    width: 220px;
+    font-weight: lighter;
+    margin: auto;
+    line-height: initial;
+}
+
+main .featured-flavor-card div>h4 {
+    color: black;
+    margin: 0 0 29px;
+}
+
+main .featured-flavor-card div {
+    position: absolute;
+    z-index: 3;
+    margin-top: 97px;
+    height: 185px;
+    width: 459px;
+}
+
+main .featured-flavor-card .icon svg {
+    width: 330px;
+    height: 186px;
+    fill: var(--beige);
+    position: absolute;
+    z-index: 0;
+    margin-top: 0;
+    object-fit: cover;
+    box-sizing: border-box;
+}
+
+main .featured-flavor-card .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+@media (max-width: 599px) {
+    main .featured-flavors {
+        background-color: unset;
+        
+    }
+
+    main .featured-flavor-card:first-child {
+        margin-bottom: 32px;
+    }
+    
+    main .featured-flavor-card:nth-child(2) {
+        margin-bottom: 32px;
+    }
+}
+
+
+@media (min-width: 600px) {
+    main .featured-flavors {
+        justify-content: flex-start;
+    }
+
+    main .featured-flavor-card:first-child {
+        margin-bottom: 32px;
+    }
+    
+    main .featured-flavor-card:nth-child(2) {
+        margin-bottom: 32px;
+    }
+}
+
+
+
+@media (min-width: 900px) {
+    main .featured-flavors {
+        justify-content: flex-start;
+    }
+
+    main .featured-flavor-card:first-child {
+        margin-bottom: 32px;
+    }
+    
+    main .featured-flavor-card:nth-child(2) {
+        margin-bottom: 32px;
+    }
+}
+
+
+
+@media (min-width: 1200px) {
+    main .featured-flavors {
+        justify-content: flex-start;
+    }
+
+    main .featured-flavor-card:first-child {
+        margin-bottom: 32px;
+    }
+    
+    main .featured-flavor-card:nth-child(2) {
+        margin-bottom: 32px;
+    }
+}
+
+
+
+@media (min-width: 1440px) {
+    main .featured-flavors {
+        justify-content: space-between;
+    } 
+}
+
+@media (min-width:1500px) {
+    main .featured-flavors {
+        justify-content: space-between;
+        background-color: unset;
+    }
+}
