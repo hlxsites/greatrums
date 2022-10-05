@@ -7,10 +7,11 @@ function createFeaturedFlavorCard(page, prefix) {
   card.className = `${prefix}-card`;
 
   card.innerHTML = `
-    
-    <h4>${page.title}</h4>
-    <p>${page.description}</p>
-    <a href=${page.path}>Learn More</a>
+    <div>
+      <h4>${page.title}</h4>
+      <p>${page.description}</p>
+      <a href=${page.path}>Learn More  ></a>
+    </div>
     <span class="icon icon-${iconName}"></span>`;
   return card;
 }
