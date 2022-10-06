@@ -1,0 +1,28 @@
+main .process {
+    max-width: 1500px;
+    width: 100%;
+}
+main .process-row {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 0px;
+    justify-content: space-around;
+}
+
+main .process-card {
+    width: 25%;
+    margin:0 7px 0 7px;
+}
+
+main .process-card:nth-child(2) {
+    border-right: 1px solid black;
+    padding-right: 11px;
+}
+
+main .process-card:first-child {
+    margin-left: unset;
+}
+
+main .process-card:nth-child(4) {
+    margin-right: unset;
+}
