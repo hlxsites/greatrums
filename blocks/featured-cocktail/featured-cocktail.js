@@ -16,6 +16,7 @@ async function createFeaturedCocktail(page) {
       ${createOptimizedPicture(page.image).outerHTML}
     </div>
   `;
+  row.querySelector('picture').remove();
   return row;
 }
 
