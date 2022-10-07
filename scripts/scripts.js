@@ -659,7 +659,6 @@ export async function decorateMain(main) {
   // hopefully forward compatible button decoration
   decorateButtons(main);
   decorateIcons(main);
-  await buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
 }
@@ -671,6 +670,7 @@ async function loadEager(doc) {
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
   if (main) {
+    await buildAutoBlocks(main);
     await decorateMain(main);
     await waitForLCP();
   }

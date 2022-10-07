@@ -23,3 +23,16 @@
         margin-left: unset;
     }
 }
+
+.columns.recipe > div {
+    align-items: flex-start;
+}
+
+.columns.recipe h2 {
+    font-family: var(--body-font-family);
+    text-transform: uppercase;
+    font-size: var(--body-font-size-s);
+    color: var(--light-gray);
+    letter-spacing: 2px;
+    font-weight: 400;
+}

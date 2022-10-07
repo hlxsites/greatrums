@@ -25,3 +25,28 @@
         margin-left: unset;
     }
 }
+
+.featured-cocktail.card {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 16px;
+    margin-bottom: 64px;
+}
+
+.featured-cocktail.card .featured-cocktail-card {
+    display: block;
+}
+
+.featured-cocktail.card .featured-cocktail-card img {
+    background-image: linear-gradient(var(--light-beige), var(--light-beige) 75%, var(--beige) 75%, var(--light-beige));
+    width: 100%;
+}
+
+.featured-cocktail.card h3 {
+    font-family: var(--body-font-family);
+    font-size: var(--body-font-size-m);
+    font-weight: 400;
+    margin-bottom: 32px;
+}

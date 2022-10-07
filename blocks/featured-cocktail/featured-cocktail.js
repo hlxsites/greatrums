@@ -1,22 +1,34 @@
 import { createOptimizedPicture, lookupPages } from '../../scripts/scripts.js';
+import { createRecipe } from '../../scripts/cocktail.js';
 
 async function createFeaturedCocktail(page) {
   const row = document.createElement('div');
   const resp = await fetch(`${page.path}.plain.html`);
-  let plain = await resp.text();
-  plain = plain.replaceAll('<h2', '<h3');
-  plain = plain.replaceAll('</h2>', '</h3>');
-  plain = plain.replaceAll('<h1', '<h2');
-  plain = plain.replaceAll('</h1>', '</h2>');
+  const plain = await resp.text();
+  const main = document.createElement('main');
+  main.innerHTML = plain;
+  const recipe = main.querySelector('div');
+  const recipeBlock = createRecipe(recipe, 2);
+
   row.innerHTML = `
     <div>
-        ${plain};
+        <h3>${page.title}</h3>
+        ${recipeBlock.innerHTML}
     </div>
-    <div class="featured-rum-overlay">
+    <div>
       ${createOptimizedPicture(page.image).outerHTML}
     </div>
   `;
-  row.querySelector('picture').remove();
+  return row;
+}
+
+function createFeaturedCocktailCard(page) {
+  const row = document.createElement('div');
+  row.innerHTML = `
+      ${createOptimizedPicture(page.cardimage).outerHTML}
+      <h3>${page.title}</h3>
+  `;
+  row.classList.add('featured-cocktail-card');
   return row;
 }
 
@@ -25,6 +37,7 @@ export default async function decorate(block) {
   const pages = await lookupPages(pathnames);
   block.textContent = '';
   pages.forEach(async (page) => {
-    block.append(await createFeaturedCocktail(page));
+    const elem = block.classList.contains('card') ? createFeaturedCocktailCard(page) : await createFeaturedCocktail(page);
+    block.append(elem);
   });
 }
