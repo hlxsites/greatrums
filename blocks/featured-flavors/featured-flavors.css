@@ -33,14 +33,6 @@ main .featured-flavor-card > div {
     margin: auto;
 }
 
-main .featured-flavor-card:first-child {
-    margin-right: 32px;
-}
-
-main .featured-flavor-card:nth-child(2) {
-    margin-right: 32px;
-}
-
 main .featured-flavor-card div > a {
     text-transform: uppercase;
     color: black;
