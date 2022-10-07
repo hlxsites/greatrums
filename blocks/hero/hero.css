@@ -29,6 +29,10 @@ main .hero .hero-overlay img {
     transform: translate(0, 50px);
 }
 
+.cocktail .hero .hero-overlay img {
+    transform: scale(1.2) translate(0, 50px);
+}
+
 main .hero picture.hero-background {
     position: absolute;
     z-index: -1;
