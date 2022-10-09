@@ -77,7 +77,6 @@ main div.process-row:nth-child(odd) > div.card-description {
     text-align: right;
 }
 
-
 main .process-card {
     width:24.98%;
 }
@@ -130,15 +129,10 @@ main .process-card-description {
     main .process-card > .icon {
         display: none;
     }
-
 }
-
-
 
 @media (max-width: 900px) {
     main .process-card > .icon img {
         display: none;
-    }
-    
+    }  
 }
-
