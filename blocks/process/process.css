@@ -86,6 +86,25 @@ main .process-card-description {
     text-align: right;
 }
 
+@media (max-width: 1200px) {
+    main .card-description h5 {
+        font-size: smaller;
+    }
+
+    main .card-description p {
+        font-size: smaller;
+    }
+
+    main .process-card .icon img{
+        width: 7px;  
+    }
+
+    main .process-card .icon {
+        padding: 0 5px;
+        margin-top: .3em;
+    }
+}
+
 @media (max-width: 600px) {
     main .process-card {
         width:50%;
@@ -116,7 +135,10 @@ main .process-card-description {
 
 
 
-@media (min-width: 900px) {
+@media (max-width: 900px) {
+    main .process-card > .icon img {
+        display: none;
+    }
     
 }
 
