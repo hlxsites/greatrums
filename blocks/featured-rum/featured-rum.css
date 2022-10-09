@@ -31,6 +31,11 @@
     z-index: 1;
 }
 
+.featured-rum .featured-rum-overlay picture:nth-of-type(2) img {
+    height: 400px;
+    width: auto;
+}
+
 
 @media (min-width: 900px) {
     .featured-rum > div {

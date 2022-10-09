@@ -31,8 +31,15 @@
 }
 
 .cards.large > ul {
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
+
+@media (min-width: 600px) {
+    .cards.large > ul {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    }
+}
+
 
 .cards.overlay ul > li {
     position: relative;

@@ -7,7 +7,7 @@ function createFeaturedRum(page, ph) {
   row.innerHTML = `
     <div class="featured-rum-overlay">
       ${pagePicture.outerHTML}
-      ${createOptimizedPicture(page.image).outerHTML}
+      ${createOptimizedPicture(page.cardimage).outerHTML}
     </div>
     <div>
       <span class="featured-rum-eyebrow">${ph.featured} ${pageTitle} ${ph.rum}</span>

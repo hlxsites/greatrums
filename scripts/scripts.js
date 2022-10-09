@@ -633,9 +633,18 @@ function loadFooter(footer) {
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-function buildAutoBlocks(main) {
+async function buildAutoBlocks(main) {
   try {
     buildHeroBlock(main);
+
+    const template = toClassName(getMetadata('template'));
+    const templates = ['cocktail'];
+    if (templates.includes(template)) {
+      const mod = await import(`./${template}.js`);
+      if (mod.default) {
+        await mod.default(main);
+      }
+    }
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
@@ -646,11 +655,10 @@ function buildAutoBlocks(main) {
  * Decorates the main element.
  * @param {Element} main The main element
  */
-export function decorateMain(main) {
+export async function decorateMain(main) {
   // hopefully forward compatible button decoration
   decorateButtons(main);
   decorateIcons(main);
-  buildAutoBlocks(main);
   decorateSections(main);
   decorateBlocks(main);
 }
@@ -662,7 +670,8 @@ async function loadEager(doc) {
   decorateTemplateAndTheme();
   const main = doc.querySelector('main');
   if (main) {
-    decorateMain(main);
+    await buildAutoBlocks(main);
+    await decorateMain(main);
     await waitForLCP();
   }
 }
