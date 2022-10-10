@@ -6,7 +6,7 @@ main .process {
     flex-direction: column;
 }
 
-main .process-row {
+main .process .process-row {
     display: flex;
     flex-direction: row;
     flex: 1 1 0px;
@@ -14,125 +14,125 @@ main .process-row {
     padding:0;
 }
 
-main .card-description {
+main .process .card-description {
     display: flex;
 }
 
-main .card-contents {
+main .process .card-contents {
     font-weight: lighter;
 }
 
-main .card-description:nth-child(even) {
+main .process .card-description:nth-child(even) {
     margin-right: 45px;
     flex-direction: row-reverse;
 }
 
-main .card-description:nth-child(odd) {
+main .process .card-description:nth-child(odd) {
     flex-direction: row;
 }
 
-main .card-image img {
+main .process .card-image img {
     object-fit: fill;
     width: 245px;
 }
 
-main .process-card > .icon img {
+main .process .process-card > .icon img {
     width:15px;
     fill: var(--copper);
 }
 
-main .process-card > .icon {
+main .process .process-card > .icon {
     width: 50px;
     text-align: center;
     margin-top: 1em;
     padding: 7px 14px;
 }
 
-main .process-row:nth-child(even) {
+main .process .process-row:nth-child(even) {
     justify-content: end;
 }
 
-main .process-row:nth-child(odd) {
+main .process .process-row:nth-child(odd) {
     justify-content: flex-start;
 }
 
-main .card-image {
+main .process .card-image {
     width: 245px;
 }
 
-main .process-row:nth-child(even) > .card-image img {
+main .process .process-row:nth-child(even) > .card-image img {
     padding-left: 32px;
 }
 
-main .process-row:nth-child(odd) > .card-image img {
+main .process .process-row:nth-child(odd) > .card-image img {
     padding-right: 32px;
 }
 
-main div.process-row:nth-child(even) > div.card-description {
+main .process div.process-row:nth-child(even) > div.card-description {
     border-left: 1px solid black;
 }
 
-main div.process-row:nth-child(odd) > div.card-description {
+main .process div.process-row:nth-child(odd) > div.card-description {
     border-right: 1px solid black;
     text-align: right;
 }
 
-main .process-card {
+main .process .process-card {
     width:24.98%;
 }
 
-main .process-card-description {
+main .process .process-card-description {
     text-align: right;
 }
 
 @media (max-width: 1200px) {
-    main .card-description h5 {
+    main .process .card-description h5 {
         font-size: smaller;
     }
 
-    main .card-description p {
+    main .process .card-description p {
         font-size: smaller;
     }
 
-    main .process-card .icon img{
+    main .process .process-card .icon img{
         width: 7px;  
     }
 
-    main .process-card .icon {
+    main .process .process-card .icon {
         padding: 0 5px;
         margin-top: .3em;
     }
 }
 
 @media (max-width: 600px) {
-    main .process-card {
+    main .process .process-card {
         width:50%;
     } 
 
-    main .process-row {
+    main .process .process-row {
         width: 100%;
         margin: 0;
         padding: 0;
     }
 
-    main div.process-row:nth-child(even) > div.card-description {
+    main .process div.process-row:nth-child(even) > div.card-description {
         border-left: unset;
         text-align: right;
     }
     
-    main div.process-row:nth-child(odd) > div.card-description {
+    main .process div.process-row:nth-child(odd) > div.card-description {
         border-right: unset;
         text-align: left;
         padding-left: 32px;
     }
 
-    main .process-card > .icon {
+    main .process .process-card > .icon {
         display: none;
     }
 }
 
 @media (max-width: 900px) {
-    main .process-card > .icon img {
+    main .process .process-card > .icon img {
         display: none;
     }  
 }
