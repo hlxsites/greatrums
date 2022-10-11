@@ -1,21 +1,23 @@
 main .process {
-    max-width: 1430px;
     width: 100%;
-    margin-top:113px;
     display: flex;
     flex-direction: column;
+    max-width: 1140px;
+    margin:auto;
+    margin-top:113px;
 }
 
 main .process .process-row {
     display: flex;
     flex-direction: row;
     flex: 1 1 0px;
-    width: 100%;
+    max-width: 50.04%;
     padding:0;
 }
 
 main .process .card-description {
     display: flex;
+    margin-top: -13px;
 }
 
 main .process .card-contents {
@@ -23,7 +25,6 @@ main .process .card-contents {
 }
 
 main .process .card-description:nth-child(even) {
-    margin-right: 45px;
     flex-direction: row-reverse;
 }
 
@@ -32,75 +33,110 @@ main .process .card-description:nth-child(odd) {
 }
 
 main .process .card-image img {
-    object-fit: fill;
-    width: 245px;
+    object-fit: cover;
+    height:auto;
 }
 
-main .process .process-card > .icon img {
-    width:15px;
-    fill: var(--copper);
+main .process .card-image {
+    min-width:221px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 main .process .process-card > .icon {
-    width: 50px;
+    max-width: 50px;
     text-align: center;
     margin-top: 1em;
     padding: 7px 14px;
+    display: unset;
+    position: relative;
+    transform: scale(1.05,.70);
+    width: 22px;
+    height: 22px;
+    border-bottom: 1px var(--copper);
+    margin-left: 10px;
+    top: 8px;
+}
+
+main .process .process-card > .icon,
+main .process .process-card > .icon::before {
+    display: block;
+    box-sizing: border-box;
+    border-right: 3px solid transparent;
+}
+
+main .process .process-card > .icon::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-left: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 3px solid transparent;
+    bottom: -13px;
+    top:1px;
+}
+
+main .process .process-row:nth-child(odd) .process-card > .icon::before {
+    transform: rotate(314deg) skew(10deg,10deg);
+    left: 19px;
+}
+
+main .process .process-row:nth-child(even) .process-card > .icon::before  {
+    transform: rotate(135deg) skew(10deg,10deg);
+    left: -11px;
+}
+
+main .process .process-row:nth-child(odd) .process-card > .icon {
+    border-right: 1px solid var(--copper);
+    margin-right: 9px;
+    margin-left: 0;
+}
+
+main .process .process-row:nth-child(even) .process-card > .icon  {
+    border-left: 1px solid var(--copper);
 }
 
 main .process .process-row:nth-child(even) {
     justify-content: end;
+    align-self: flex-end;
 }
 
 main .process .process-row:nth-child(odd) {
     justify-content: flex-start;
 }
 
-main .process .card-image {
-    width: 245px;
+main .process .process-row:nth-child(even) > .card-description {
+    border-left: 1px solid var(--copper);
 }
 
-main .process .process-row:nth-child(even) > .card-image img {
-    padding-left: 32px;
-}
-
-main .process .process-row:nth-child(odd) > .card-image img {
-    padding-right: 32px;
-}
-
-main .process div.process-row:nth-child(even) > div.card-description {
-    border-left: 1px solid black;
-}
-
-main .process div.process-row:nth-child(odd) > div.card-description {
-    border-right: 1px solid black;
+main .process .process-row:nth-child(odd) > .card-description {
+    border-right: 1px solid var(--copper);
     text-align: right;
-}
-
-main .process .process-card {
-    width:24.98%;
 }
 
 main .process .process-card-description {
     text-align: right;
 }
 
+@media (max-width: 700px) {
+    main .process div.process-row:nth-child(even) > div.card-description {
+        border-left: unset;
+    }
+    
+    main .process div.process-row:nth-child(odd) > div.card-description {
+        border-right: unset;
+    }
+
+    main .process .process-card > .icon {
+        display: none;
+    }
+}
+
 @media (max-width: 1200px) {
-    main .process .card-description h5 {
-        font-size: smaller;
-    }
-
-    main .process .card-description p {
-        font-size: smaller;
-    }
-
-    main .process .process-card .icon img{
-        width: 7px;  
-    }
-
-    main .process .process-card .icon {
-        padding: 0 5px;
-        margin-top: .3em;
+    main .process .process-container {
+        padding: 0;
     }
 }
 
@@ -115,24 +151,46 @@ main .process .process-card-description {
         padding: 0;
     }
 
-    main .process div.process-row:nth-child(even) > div.card-description {
+    main .process .process-row:nth-child(even) > .card-description {
         border-left: unset;
         text-align: right;
     }
     
-    main .process div.process-row:nth-child(odd) > div.card-description {
+    main .process .process-row:nth-child(odd) > .card-description {
         border-right: unset;
         text-align: left;
         padding-left: 32px;
     }
-
-    main .process .process-card > .icon {
-        display: none;
-    }
 }
 
 @media (max-width: 900px) {
-    main .process .process-card > .icon img {
-        display: none;
-    }  
+    main .process {
+        margin-top: 50px;
+    }
+    
+    main .process .process-card > .icon {
+        margin-top: .1em;
+        transform: scale(.95,.60);
+    }
+
+    main .process .process-card h5 {
+        font-size: smaller;
+    }
+
+    main .process .process-card p {
+        font-size: smaller;
+    }
+
+    main .process-container {
+        padding: unset;
+    }
+
+    main .process div.process-row:nth-child(even) > div.card-description {
+        padding-right: 7px;
+    }
+
+    main .process div.process-row:nth-child(odd) > div.card-description {
+        padding-left: 7px;
+    }
+
 }

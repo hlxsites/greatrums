@@ -1,11 +1,5 @@
-import { decorateIcons } from '../../scripts/scripts.js';
-
-let i = 1;
-
 function modifyCardDescription(div) {
-  const cls = (i % 2 === 0) ? 'right' : 'left';
-  div.innerHTML = `<span class='icon icon-process-${cls}'></span><span class='card-contents'>${div.innerHTML}</span>`;
-  i += 1;
+  div.innerHTML = `<span class='icon icon-process'></span><span class='card-contents'>${div.innerHTML}</span>`;
   return ' card-description';
 }
 
@@ -21,6 +15,4 @@ export default function decorate(block) {
       div.className += cardDescription || cardPicture;
     });
   });
-
-  decorateIcons(block);
 }
