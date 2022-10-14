@@ -125,12 +125,12 @@ main .process .process-card-description {
         display: none;
     }
 
-    main .process .process-row:nth-child(even) .card-contents {
-        padding-left:20px;
-    }
-
     main .process .card-contents {
         padding: 0 8px;
+    }
+    
+    main .process .process-row:nth-child(even) .card-contents {
+        padding-left:20px;
     }
 
     main .process .process-card h5 {
