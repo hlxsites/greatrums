@@ -120,33 +120,47 @@ main .process .process-card-description {
     text-align: right;
 }
 
-@media (max-width: 700px) {
-    main .process div.process-row:nth-child(even) > div.card-description {
-        border-left: unset;
-    }
-    
-    main .process div.process-row:nth-child(odd) > div.card-description {
-        border-right: unset;
-    }
-
+@media (max-width: 1200px) {
     main .process .process-card > .icon {
         display: none;
     }
+
+    main .process .process-row:nth-child(even) .card-contents {
+        padding-left:20px;
+    }
+
+    main .process .card-contents {
+        padding: 0 8px;
+    }
+
+    main .process .process-card h5 {
+        font-size: medium;
+    }
 }
 
-@media (max-width: 1200px) {
+@media (min-width: 1200px) {
+    main .process div.process-row:nth-child(even) > div.card-description {
+        border-left: 1px solid var(--copper);
+    }
+    
+    main .process div.process-row:nth-child(odd) > div.card-description {
+        border-right: 1px solid var(--copper);
+    }
+}
+
+@media (min-width: 900px) {
     main .process .process-container {
         padding: 0;
     }
 }
 
-@media (max-width: 600px) {
-    main .process .process-card {
-        width:50%;
+@media (max-width: 900px) {
+    main .process .card-image {
+        width:35%;
     } 
 
     main .process .process-row {
-        width: 100%;
+        max-width: 100%;
         margin: 0;
         padding: 0;
     }
@@ -154,43 +168,13 @@ main .process .process-card-description {
     main .process .process-row:nth-child(even) > .card-description {
         border-left: unset;
         text-align: right;
+        margin-right: 20px;
     }
     
     main .process .process-row:nth-child(odd) > .card-description {
         border-right: unset;
         text-align: left;
         padding-left: 32px;
+        margin-left:20px;
     }
-}
-
-@media (max-width: 900px) {
-    main .process {
-        margin-top: 50px;
-    }
-    
-    main .process .process-card > .icon {
-        margin-top: .1em;
-        transform: scale(.95,.60);
-    }
-
-    main .process .process-card h5 {
-        font-size: smaller;
-    }
-
-    main .process .process-card p {
-        font-size: smaller;
-    }
-
-    main .process-container {
-        padding: unset;
-    }
-
-    main .process div.process-row:nth-child(even) > div.card-description {
-        padding-right: 7px;
-    }
-
-    main .process div.process-row:nth-child(odd) > div.card-description {
-        padding-left: 7px;
-    }
-
 }
