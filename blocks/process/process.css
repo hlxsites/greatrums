@@ -1,0 +1,180 @@
+main .process {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: 1140px;
+    margin:auto;
+    margin-top:113px;
+}
+
+main .process .process-row {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 0px;
+    max-width: 50.04%;
+    padding:0;
+}
+
+main .process .card-description {
+    display: flex;
+    margin-top: -13px;
+}
+
+main .process .card-contents {
+    font-weight: lighter;
+}
+
+main .process .card-description:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+main .process .card-description:nth-child(odd) {
+    flex-direction: row;
+}
+
+main .process .card-image img {
+    object-fit: cover;
+    height:auto;
+}
+
+main .process .card-image {
+    min-width:221px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+main .process .process-card > .icon {
+    max-width: 50px;
+    text-align: center;
+    margin-top: 1em;
+    padding: 7px 14px;
+    display: unset;
+    position: relative;
+    transform: scale(1.05,.70);
+    width: 22px;
+    height: 22px;
+    border-bottom: 1px var(--copper);
+    margin-left: 10px;
+    top: 8px;
+}
+
+main .process .process-card > .icon,
+main .process .process-card > .icon::before {
+    display: block;
+    box-sizing: border-box;
+    border-right: 3px solid transparent;
+}
+
+main .process .process-card > .icon::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-left: 1px solid;
+    border-top: 1px solid;
+    border-bottom: 3px solid transparent;
+    bottom: -13px;
+    top:1px;
+}
+
+main .process .process-row:nth-child(odd) .process-card > .icon::before {
+    transform: rotate(314deg) skew(10deg,10deg);
+    left: 19px;
+}
+
+main .process .process-row:nth-child(even) .process-card > .icon::before  {
+    transform: rotate(135deg) skew(10deg,10deg);
+    left: -11px;
+}
+
+main .process .process-row:nth-child(odd) .process-card > .icon {
+    border-right: 1px solid var(--copper);
+    margin-right: 9px;
+    margin-left: 0;
+}
+
+main .process .process-row:nth-child(even) .process-card > .icon  {
+    border-left: 1px solid var(--copper);
+}
+
+main .process .process-row:nth-child(even) {
+    justify-content: end;
+    align-self: flex-end;
+}
+
+main .process .process-row:nth-child(odd) {
+    justify-content: flex-start;
+}
+
+main .process .process-row:nth-child(even) > .card-description {
+    border-left: 1px solid var(--copper);
+}
+
+main .process .process-row:nth-child(odd) > .card-description {
+    border-right: 1px solid var(--copper);
+    text-align: right;
+}
+
+main .process .process-card-description {
+    text-align: right;
+}
+
+@media (max-width: 1200px) {
+    main .process .process-card > .icon {
+        display: none;
+    }
+
+    main .process .card-contents {
+        padding: 0 8px;
+    }
+    
+    main .process .process-row:nth-child(even) .card-contents {
+        padding-left:20px;
+    }
+
+    main .process .process-card h5 {
+        font-size: medium;
+    }
+}
+
+@media (min-width: 1200px) {
+    main .process div.process-row:nth-child(even) > div.card-description {
+        border-left: 1px solid var(--copper);
+    }
+    
+    main .process div.process-row:nth-child(odd) > div.card-description {
+        border-right: 1px solid var(--copper);
+    }
+}
+
+@media (min-width: 900px) {
+    main .process .process-container {
+        padding: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    main .process .card-image {
+        width:35%;
+    } 
+
+    main .process .process-row {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    main .process .process-row:nth-child(even) > .card-description {
+        border-left: unset;
+        text-align: right;
+        margin-right: 20px;
+    }
+    
+    main .process .process-row:nth-child(odd) > .card-description {
+        border-right: unset;
+        text-align: left;
+        padding-left: 32px;
+        margin-left:20px;
+    }
+}
